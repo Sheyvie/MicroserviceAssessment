@@ -90,3 +90,13 @@ C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceA
 C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\SocialMediaMessageApp.dll
 C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\SocialMediaMessageApp.pdb
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\SocialMedia_Email.deps.json
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\SocialMedia_Email.runtimeconfig.json
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\SocialMedia_Email.exe
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\MailKit.dll
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\MimeKit.dll
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\SocialMedia_Email.dll
+C:\Users\USER\Documents\JituTraining\Assessments\Week 6 Assessment\MicroserviceAssessment\SocialMediaApp\SocialMedia_Auth\bin\Debug\net7.0\SocialMedia_Email.pdb

@@ -3,12 +3,13 @@
     "",
     "\\SocialMediaApp",
     "\\SocialMediaApp\\SocialMedia_Post",
+    "\\SocialMediaApp\\SocialMedia_Post\\Controllers",
     "\\SocialMediaApp\\SocialMedia_Post\\Services",
     "\\SocialMediaApp\\SocialMedia_Post\\Services\\Iservices",
     "\\SocialMediaApp\\SocilaMedia_Comment",
     "\\SocialMediaApp\\SocilaMedia_Comment\\Services",
     "\\SocialMediaApp\\SocilaMedia_Comment\\Services\\Iservice"
   ],
-  "SelectedNode": "\\SocialMediaApp\\SocialMedia_Post\\Services\\PostService.cs",
+  "SelectedNode": "\\SocialMediaApp\\SocialMedia_Post\\Controllers\\PostController.cs",
   "PreviewInSolutionExplorer": false
 }

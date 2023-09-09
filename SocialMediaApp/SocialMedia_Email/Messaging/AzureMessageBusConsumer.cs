@@ -26,7 +26,6 @@ namespace SocialMedia_Email.Messaging
 
                 var serviceBusClient = new ServiceBusClient(Connectionstring);
                 _registrationProcessor = serviceBusClient.CreateProcessor(QueueName);
-                //_orderEmails = serviceBusClient.CreateProcessor("ordertopic", "OrderEmailCreated");
                 _emailService = new EmailSendService(_configuration);
                 _saveToDb = service;
 
@@ -40,9 +39,7 @@ namespace SocialMedia_Email.Messaging
             _registrationProcessor.ProcessErrorAsync += ErrorHandler;
             await _registrationProcessor.StartProcessingAsync();
 
-            //_orderEmails.ProcessMessageAsync += OnOrder;
-            //_orderEmails.ProcessErrorAsync += ErrorHandler;
-            //await _orderEmails.StartProcessingAsync();
+            
         }
 
         
@@ -76,13 +73,13 @@ namespace SocialMedia_Email.Messaging
             try
             {
                 StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.Append("<img src=\"https://cdn.pixabay.com/photo/2023/04/20/10/19/coding-7939372_1280.jpg\" width=\"1000\" height=\"600\">");
+                stringBuilder.Append("<img src=\"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapers.com%2Flove-cute-couple&psig=AOvVaw36sEMvU2itNk2F-llsOo06&ust=1694352291748000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCKjF86bQnYEDFQAAAAAdAAAAABAE\" width =\"1000\" height=\"600\">");
                 stringBuilder.Append("<h1> Hello " + userMessage.Name + "</h1>");
-                stringBuilder.AppendLine("<br/>Welcome to The Jitu Shopping Site ");
+                stringBuilder.AppendLine("<br/>Welcome to Quest World ");
 
                 stringBuilder.Append("<br/>");
                 stringBuilder.Append('\n');
-                stringBuilder.Append("<p> Start Shopping here</p>");
+                stringBuilder.Append("<p> Post your Thoughts here here</p>");
                 var emailLogger = new EmailLoggers()
                 {
                     Email = userMessage.Email,

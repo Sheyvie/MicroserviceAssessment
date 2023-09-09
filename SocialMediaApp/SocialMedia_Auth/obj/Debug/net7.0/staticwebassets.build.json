@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "BsuSdADM4eYyHk1qirCDMRzPyMMLlC4ITDnN6Wxrrd8=",
+  "Hash": "w174gbixItLFi47n6FgOG9shci5Rcwud8Wf2CyMHFxA=",
   "Source": "SocialMedia_Auth",
   "BasePath": "_content/SocialMedia_Auth",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\USER\\Documents\\JituTraining\\Assessments\\Week 6 Assessment\\MicroserviceAssessment\\SocialMediaApp\\SocialMedia_Email\\SocialMedia_Email.csproj",
+      "Version": 2,
+      "Source": "SocialMedia_Email",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }

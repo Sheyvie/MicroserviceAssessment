@@ -10,8 +10,7 @@ namespace SocialMediaMessageApp
 {
     public class MessageBus : IMessageBus
     {
-        public string ConnectionString = "Endpoint=sb://yvieenterprise.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;" +
-        "SharedAccessKey=c1mRQF80/fmvWtzFAfjEjrgNHAnzaQwgA+ASbMNGHNU=";
+        public string ConnectionString = "Endpoint=sb://yvieenterprise.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=c1mRQF80/fmvWtzFAfjEjrgNHAnzaQwgA+ASbMNGHNU=";
         public async Task PublishMessage(object message, string queue)
         {
 

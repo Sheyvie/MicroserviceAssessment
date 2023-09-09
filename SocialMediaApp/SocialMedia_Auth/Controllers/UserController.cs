@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SocialMedia_Auth.Models.Dtos;
 using SocialMedia_Auth.Services.IServices;
+using SocialMedia_Email.Models;
 using SocialMediaMessageApp;
 
 namespace SocialMedia_Auth.Controllers
@@ -20,7 +21,7 @@ namespace SocialMedia_Auth.Controllers
             _response = new ResponseDto();
             _configuration = configuration;
             _messageBus = messageBus;
-        }
+        }   
 
         [HttpPost("register")]
         public async Task<ActionResult<ResponseDto>> AddUSer(RegisterRequestDto registerRequestDto)
@@ -34,15 +35,14 @@ namespace SocialMedia_Auth.Controllers
 
                 return BadRequest(_response);
             }
-            //send a message to ServiceBus which is the queue
-            //var queueName = _configuration.GetSection("QueuesandTopics:RegisterUser").Get<string>(); ;
-            //var message = new UserMessage()
-            //{
-            //    Email = registerRequestDto.Email,
-            //    Name = registerRequestDto.Name
-            //};
+            var queueName = _configuration.GetSection("QueuesandTopics:RegisterUser").Get<string>(); ;
+            var message = new UserMessage()
+            {
+                Email = registerRequestDto.Email,
+                Name = registerRequestDto.Name
+             };
 
-            //await _messageBus.PublishMessage(message, queueName);
+            await _messageBus.PublishMessage(message, queueName);
             return Ok(_response);
         }
 
