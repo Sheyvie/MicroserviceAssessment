@@ -36,7 +36,7 @@ namespace SocialMedia_Post.Services
 
         public async Task<Posts> GetPostByIdAsync(Guid id)
         {
-            return await _context.Posts.FirstOrDefaultAsync(x => x.PostId == id);
+            return await _context.Posts.FirstOrDefaultAsync(x => x.UserId == id);
         }
 
         public async Task<IEnumerable<Posts>> GetPostsAsync()

@@ -19,7 +19,7 @@ namespace SocialMedia_Email.Services
         public async Task SendEmail(UserMessage res, string message)
         {
             MimeMessage message1 = new MimeMessage();
-            message1.From.Add(new MailboxAddress("QuestApp", "jekhyde77@gmail.com"));
+            message1.From.Add(new MailboxAddress("QuestApp", email));
 
             // Set the recipient's email address
             message1.To.Add(new MailboxAddress(res.Name, res.Email));
@@ -36,7 +36,7 @@ namespace SocialMedia_Email.Services
 
             client.Connect("smtp.gmail.com", 587, false);
 
-            client.Authenticate("jekhyde77@gmail.com", "vgki lrxb ibfz oglp");
+            client.Authenticate(email, password);
 
             await client.SendAsync(message1);
 
