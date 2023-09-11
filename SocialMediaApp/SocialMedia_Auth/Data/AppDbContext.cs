@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace SocialMedia_Auth.Data
 {
-     //using identity framework
+     //using identity framework core
         public class AppDbContext:IdentityDbContext<AppUser>
         {
 

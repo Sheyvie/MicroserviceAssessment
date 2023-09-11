@@ -29,7 +29,7 @@ namespace SocialMedia_Auth.Controllers
             var errorMessage = await _userInterface.RegisterUser(registerRequestDto);
             if (!string.IsNullOrWhiteSpace(errorMessage))
             {
-                //error
+                
                 _response.IsSuccess = false;
                 _response.Message = errorMessage;
 
@@ -52,7 +52,7 @@ namespace SocialMedia_Auth.Controllers
             var response = await _userInterface.Login(loginRequestDto);
             if (response.User == null)
             {
-                //error
+                
                 _response.IsSuccess = false;
                 _response.Message = "Invalid Credential";
 
@@ -68,7 +68,7 @@ namespace SocialMedia_Auth.Controllers
             var response = await _userInterface.AssignUserRole(registerRequestDto.Email, registerRequestDto.Role);
             if (!response)
             {
-                //error
+               
                 _response.IsSuccess = false;
                 _response.Message = "Error Occured";
 

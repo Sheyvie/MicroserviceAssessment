@@ -20,7 +20,7 @@ namespace SocialMedia_Email.Services
 
         public async Task SaveData(EmailLoggers emailLoggers)
         {
-            //create _context
+            
 
             var _context = new AppDbContext(this.options);
             _context.EmailLoggers.Add(emailLoggers);

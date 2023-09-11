@@ -68,7 +68,7 @@ namespace SocialMedia_Post.Controllers
                 _responseDto.Message = "Error Occured";
                 return BadRequest(_responseDto);
             }
-            //update
+            //updating
             var updated = _mapper.Map(postRequestDto, post);
             var response = await _postInterface.UpdatePostAsync(updated);
             _responseDto.Result = response;
@@ -86,8 +86,7 @@ namespace SocialMedia_Post.Controllers
                 _responseDto.Message = "Error Occured";
                 return BadRequest(_responseDto);
             }
-            //delete
-
+            
             var response = await _postInterface.DeletePostAsync(post);
             _responseDto.Result = response;
             return Ok(_responseDto);

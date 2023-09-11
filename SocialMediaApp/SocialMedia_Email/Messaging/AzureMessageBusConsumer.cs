@@ -34,7 +34,7 @@ namespace SocialMedia_Email.Messaging
           
         public async Task Start()
         {
-            //start Processing
+            //start Processor
             _registrationProcessor.ProcessMessageAsync += OnRegistartion;
             _registrationProcessor.ProcessErrorAsync += ErrorHandler;
             await _registrationProcessor.StartProcessingAsync();
@@ -46,7 +46,7 @@ namespace SocialMedia_Email.Messaging
 
         public async Task Stop()
         {
-                //Stop Processing
+                //Stop Processor
                 await _registrationProcessor.StopProcessingAsync();
                 await _registrationProcessor.DisposeAsync();
         }

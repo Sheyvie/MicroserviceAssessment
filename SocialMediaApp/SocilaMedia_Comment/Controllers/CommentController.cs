@@ -86,7 +86,7 @@ namespace SocilaMedia_Comment.Controllers
                 _responseDto.Message = "Error Occured";
                 return BadRequest(_responseDto);
             }
-            //delete
+           
 
             var response = await _commentInterface.DeleteCommentAsync(comment);
             _responseDto.Result = response;

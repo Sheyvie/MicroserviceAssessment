@@ -16,7 +16,7 @@ namespace SocialMedia_Auth.Models.Dtos
 
         [Required]
         public string PhoneNumber { get; set; } = string.Empty;
-        //optional
+       
         public string? Role { get; set; } = string.Empty;
 
     }

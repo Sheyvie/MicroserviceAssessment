@@ -19,13 +19,13 @@ namespace SocialMedia_Email.Extensions
 
         private static void OnStop()
         {
-            //Stop our Email Processor
+            //Stop Email Processor
             ServiceBusConsumerInstance.Stop();
         }
 
         private static void OnStart()
         {
-            //Call our Email Processor
+            //Call Email Processor
             ServiceBusConsumerInstance.Start();
         }
     }
