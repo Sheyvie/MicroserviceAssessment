@@ -13,9 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialMedia_Post", "SocialM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocilaMedia_Comment", "SocilaMedia_Comment\SocilaMedia_Comment.csproj", "{1A85B68D-7DAE-4E63-94E8-49F4FDD7D828}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMediaMessageApp", "SocialMediaMessageApp\SocialMediaMessageApp.csproj", "{B1942447-ADFE-458A-A109-0BC0E5EA749B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialMediaMessageApp", "SocialMediaMessageApp\SocialMediaMessageApp.csproj", "{B1942447-ADFE-458A-A109-0BC0E5EA749B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialMedia_Email", "SocialMedia_Email\SocialMedia_Email.csproj", "{30BB0625-98E7-4B3B-882C-F5BE19D49CC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialMedia_Email", "SocialMedia_Email\SocialMedia_Email.csproj", "{30BB0625-98E7-4B3B-882C-F5BE19D49CC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{CFF42CBE-DF1A-43B2-BBA2-44D49139CF0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialMedia_FrontEnd", "SocialMedia_FrontEnd\SocialMedia_FrontEnd.csproj", "{0D1D8434-477B-42A5-95F6-D37F8E48DC0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{30BB0625-98E7-4B3B-882C-F5BE19D49CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30BB0625-98E7-4B3B-882C-F5BE19D49CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30BB0625-98E7-4B3B-882C-F5BE19D49CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D1D8434-477B-42A5-95F6-D37F8E48DC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1D8434-477B-42A5-95F6-D37F8E48DC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1D8434-477B-42A5-95F6-D37F8E48DC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1D8434-477B-42A5-95F6-D37F8E48DC0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +61,7 @@ Global
 		{1A85B68D-7DAE-4E63-94E8-49F4FDD7D828} = {7298D6B4-0DE0-430C-BC77-3A9724A0AAE8}
 		{B1942447-ADFE-458A-A109-0BC0E5EA749B} = {34573C7F-E1FC-46F3-9DCC-436DB29ECBCC}
 		{30BB0625-98E7-4B3B-882C-F5BE19D49CC0} = {7298D6B4-0DE0-430C-BC77-3A9724A0AAE8}
+		{0D1D8434-477B-42A5-95F6-D37F8E48DC0C} = {CFF42CBE-DF1A-43B2-BBA2-44D49139CF0E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC036936-9593-4FF3-8413-97BEB1FF681B}

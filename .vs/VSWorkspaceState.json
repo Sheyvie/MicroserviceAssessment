@@ -2,16 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\SocialMediaApp",
-    "\\SocialMediaApp\\SocialMedia_Email",
-    "\\SocialMediaApp\\SocialMedia_Email\\Services",
+    "\\SocialMediaApp\\SocialMedia_FrontEnd",
+    "\\SocialMediaApp\\SocialMedia_FrontEnd\\Pages",
     "\\SocialMediaApp\\SocialMedia_Post",
-    "\\SocialMediaApp\\SocialMedia_Post\\Controllers",
     "\\SocialMediaApp\\SocialMedia_Post\\Services",
     "\\SocialMediaApp\\SocialMedia_Post\\Services\\Iservices",
     "\\SocialMediaApp\\SocilaMedia_Comment",
     "\\SocialMediaApp\\SocilaMedia_Comment\\Services",
     "\\SocialMediaApp\\SocilaMedia_Comment\\Services\\Iservice"
   ],
-  "SelectedNode": "\\SocialMediaApp\\SocialMedia_Email\\Services\\EmailSendService.cs",
+  "SelectedNode": "\\SocialMediaApp\\SocialMediaApp.sln",
   "PreviewInSolutionExplorer": false
 }

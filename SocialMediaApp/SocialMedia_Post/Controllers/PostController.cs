@@ -40,10 +40,10 @@ namespace SocialMedia_Post.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<ResponseDto>> AddPost(PostRequestDto postRequest)
         {
-            var newPost = _mapper.Map<Posts>(postRequest);
+            var newPost = _mapper.Map<Post>(postRequest);
             var response = await _postInterface.AddPostAsync(newPost);
             if (string.IsNullOrWhiteSpace(response))
             {
@@ -58,7 +58,7 @@ namespace SocialMedia_Post.Controllers
 
         
         [HttpPut]
-        [Authorize]
+       // [Authorize]
         public async Task<ActionResult<ResponseDto>> UpdatePost(Guid id, PostRequestDto postRequestDto)
         {
             var post = await _postInterface.GetPostByIdAsync(id);
@@ -76,7 +76,7 @@ namespace SocialMedia_Post.Controllers
         }
 
         [HttpDelete]
-        [Authorize]
+        //[Authorize]
         public async Task<ActionResult<ResponseDto>> DeletePost(Guid id)
         {
             var post = await _postInterface.GetPostByIdAsync(id);
@@ -91,5 +91,55 @@ namespace SocialMedia_Post.Controllers
             _responseDto.Result = response;
             return Ok(_responseDto);
         }
+        [HttpPost("{postId}/like")]
+        public async Task<ActionResult> LikePost(Guid Id , Post post)
+        {
+            var posts = await _postInterface.GetPostByIdAsync(Id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            // Update the like count in the database
+            post.Likes++;
+
+            await _postInterface.UpdatePostAsync(post);
+
+            return Ok(_responseDto);
+            
+        }
+
+
+        // Remove a like from a post with postId
+        [HttpDelete("{postId}/like")]
+        public async Task<ActionResult> UnLikePost(Guid Id ,Post post)
+        {
+            var posts = await _postInterface.GetPostByIdAsync(Id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            // Update the dislike count in the database
+            post.UnLike++;
+
+            await _postInterface.UpdatePostAsync(post);
+
+            return Ok(_responseDto);
+        }
+
+            
+           
+        
+
+        // Fetch posts by a specific tag
+        [HttpGet("tag/{tag}")]
+        public async Task<ActionResult<IEnumerable<Post>>> GetPostsByHashtag(string tag)
+        {
+            // Implement logic to fetch posts by a specific hashtag
+            var postsByTag = await _postInterface.GetPostsByTagAsync(tag);
+            return Ok(postsByTag);
+        }
+
     }
 }

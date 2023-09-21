@@ -1,0 +1,143 @@
+﻿@page "/post/{postId}/comments"
+@using SocilaMedia_FrontEnd.Models.Comments;
+@inject ICommentInterface commentInterface
+@inject IJSRuntime JSRuntime
+
+
+<h3>Comments for Post @PostId</h3>
+
+@if (comments == null)
+{
+    <p>Loading comments
+        <div class="spinner-border spinner-border-sm"></div>
+        <div class="spinner-grow spinner-grow-sm"></div>
+    </p>
+}
+else if (comments.Any())
+{
+    @foreach (var comment in comments)
+    {
+        <div class="comment card mb-3">
+            <div class="card-body">
+                <p class="card-text">@comment.Body</p>
+                <button @onclick="() => ShowDeleteCommentModal(comment.CommentId)" class="btn btn-danger">Delete Comment</button>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>No comments found for this post.</p>
+}
+<!-- Create Comment Modal -->
+<button type="button" class="btn btn-primary" @onclick="()=>(ShowAddCommentModal(PostId))">Add Comment</button>
+<div class="modal fade" id="createCommentModal" tabindex="-1" role="dialog" aria-labelledby="createCommentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createCommentModalLabel">Create Comment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="commentContent">Comment Content</label>
+                    <textarea class="form-control" id="commentContent" rows="4" @bind="newCommentContent"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button @onclick="(()=>CreateComment(PostId))" class="btn btn-primary">Create Comment</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Delete Comment Confirmation Modal -->
+<div class="modal fade" id="deleteCommentModal" tabindex="-1" role="dialog" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteCommentModalLabel">Confirm Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this comment?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+               <button @onclick="() => DeleteComment(commentToDeleteId)" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public Guid PostId{ get; set; }
+
+    private CommentRequestDto comment = new CommentRequestDto();
+    private List<Post> posts;
+    private List<Comment> comments = new List<Comment>();
+
+
+    private Guid commentToDeleteId;
+    private string newCommentContent = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var comments= await commentInterface.GetCommentsAsync();
+    }
+    private async Task CreateComment(Guid id)
+    {
+        CommentRequestDto comment = new CommentRequestDto();
+        // Call ApiService to create a new comment
+        var postId = id;
+        var newComment = new Comment()
+        {
+            Body = newCommentContent
+            // Set other properties like UserId and PostId
+        };
+         var res =await commentInterface.AddCommentAsync(comment);
+
+        // Close the modal
+        await JSRuntime.InvokeVoidAsync("$('#createCommentModal').modal", "hide");
+
+        // Clear the input field
+        newCommentContent = string.Empty;
+
+        // Refresh the comments to show the new comment
+        await RefreshComments();
+    }
+      private async Task ShowAddCommentModal(Guid commentId)
+    {
+        commentToDeleteId = commentId;
+        await JSRuntime.InvokeVoidAsync("$('#createCommentModal').modal", "show");
+    }
+    private async Task ShowDeleteCommentModal(Guid commentId)
+    {
+        commentToDeleteId = commentId;
+        await JSRuntime.InvokeVoidAsync("$('#deleteCommentModal').modal", "show");
+    }
+
+    private async Task DeleteComment(Guid id )
+    {
+        // Call ApiService to delete the comment
+       var res= await commentInterface.DeleteCommentAsync(id);
+        // Refresh the comments to remove the deleted comment
+        
+        
+        // Close the modal
+        await JSRuntime.InvokeVoidAsync("$('#deleteCommentModal').modal", "hide");
+        await RefreshComments();
+    }
+
+    private async Task RefreshComments()
+    {
+        
+        // Refresh the comments after deleting a comment
+        comments =await commentInterface.GetCommentsAsync();
+        StateHasChanged(); // Trigger UI update
+    }
+}

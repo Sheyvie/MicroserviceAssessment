@@ -1,0 +1,36 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h3 class="text-center">Welcome to Writer,a world of Thoughts</h3>
+<div class="container ">
+            <!-- Post Feed -->
+            <section class="post-feed">
+                <!-- Individual posts with comments -->
+                <article class="post">
+                    <div class="post-header">
+                        <h2 class="text-lg-end">Posts</h2>
+                        
+                    </div>
+                    <p class="post-content">
+                <DisplayPosts />
+                       
+                    </p>
+            <div class="comment-section">
+                <h3>Comments</h3>
+              
+                <div class="comment">
+                    <DisplayComments />
+                </div>
+                
+            </div>
+        </article>
+
+       
+    </section>
+</div>
+@code{
+    public Post post{ get; set; }
+}
+
+

@@ -22,7 +22,7 @@ namespace SocialMedia_Post.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SocialMedia_Post.Models.Posts", b =>
+            modelBuilder.Entity("SocialMedia_Post.Models.Post", b =>
                 {
                     b.Property<Guid>("PostId")
                         .ValueGeneratedOnAdd()
@@ -35,6 +35,9 @@ namespace SocialMedia_Post.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Likes")
+                        .HasColumnType("int");
+
                     b.Property<string>("Tag")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -42,6 +45,9 @@ namespace SocialMedia_Post.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UnLike")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");

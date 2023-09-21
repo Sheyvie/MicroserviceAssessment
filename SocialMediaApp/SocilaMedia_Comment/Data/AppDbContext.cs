@@ -10,6 +10,6 @@ namespace SocialMedia_Comment.Data
 
         }
 
-        public DbSet<Comments> Comments{ get; set; }
+        public DbSet<Comment> Comments{ get; set; }
     }
 }

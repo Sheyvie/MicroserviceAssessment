@@ -8,7 +8,7 @@ namespace SocilaMedia_Comment.Profiles
     {
         public CommentProfile()
         {
-            CreateMap<CommentRequestDto, Comments>().ReverseMap();
+            CreateMap<CommentRequestDto, Comment>().ReverseMap();
         }
     }
 }

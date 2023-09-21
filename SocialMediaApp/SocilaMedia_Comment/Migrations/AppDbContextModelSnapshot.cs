@@ -22,7 +22,7 @@ namespace SocilaMedia_Comment.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SocilaMedia_Comment.Models.Comments", b =>
+            modelBuilder.Entity("SocilaMedia_Comment.Models.Comment", b =>
                 {
                     b.Property<Guid>("CommentId")
                         .ValueGeneratedOnAdd()

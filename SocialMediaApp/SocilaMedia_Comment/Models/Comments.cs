@@ -2,7 +2,7 @@
 
 namespace SocilaMedia_Comment.Models
 {
-    public class Comments
+    public class Comment
     {
         [Key]
         public  Guid CommentId { get; set; }

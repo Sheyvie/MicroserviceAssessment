@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SocialMedia_Post.Models
 {
-    public class Posts
+    public class Post
     {
         [Key]
         public Guid PostId { get; set; }
@@ -21,6 +21,8 @@ namespace SocialMedia_Post.Models
        
 
         public DateTime DateCreated { get; set; }
-       
+        public int Likes { get; set; }
+        public int UnLike { get; set; }
+
     }
 }

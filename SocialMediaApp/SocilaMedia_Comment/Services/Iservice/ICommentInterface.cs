@@ -4,13 +4,13 @@ namespace SocilaMedia_Comment.Services.Iservice
 {
     public interface ICommentInterface
     {
-        Task<IEnumerable<Comments>> GetCommentsAsync();
+        Task<IEnumerable<Comment>> GetCommentsAsync();
 
-        Task<Comments> GetCommentByIdAsync(Guid id);
+        Task<Comment> GetCommentByIdAsync(Guid id);
 
 
-        Task<string> AddCommentAsync(Comments comment);
-        Task<string> UpdateCommentAsync(Comments comment);
-        Task<string> DeleteCommentAsync(Comments comment);
+        Task<string> AddCommentAsync(Comment comment);
+        Task<string> UpdateCommentAsync(Comment comment);
+        Task<string> DeleteCommentAsync(Comment comment);
     }
 }

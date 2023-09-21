@@ -42,7 +42,7 @@ namespace SocilaMedia_Comment.Controllers
         [Authorize]
         public async Task<ActionResult<ResponseDto>> AddPost([FromBody]CommentRequestDto commentRequest)
         {
-            var newComment = _mapper.Map<Comments>(commentRequest);
+            var newComment = _mapper.Map<Comment>(commentRequest);
             var response = await _commentInterface.AddCommentAsync(newComment);
             if (string.IsNullOrWhiteSpace(response))
             {

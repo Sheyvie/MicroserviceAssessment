@@ -8,7 +8,7 @@ namespace SocialMedia_Post.Profiles
     {
         public PostProfile()
         {
-            CreateMap<PostRequestDto, Posts>().ReverseMap();
+            CreateMap<PostRequestDto, Post>().ReverseMap();
         }
     }
 }

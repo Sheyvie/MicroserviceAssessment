@@ -5,15 +5,20 @@ namespace SocialMedia_Post.Services.Iservices
 {
     public interface IPostInterface
     {
-        Task<IEnumerable<Posts>> GetPostsAsync();
+        Task<IEnumerable<Post>> GetPostsAsync();
 
-        Task<Posts> GetPostByIdAsync(Guid id);
+        Task<Post> GetPostByIdAsync(Guid id);
 
     
 
-        Task<string> AddPostAsync(Posts post);
-        Task<string> UpdatePostAsync(Posts post);
-        Task<string> DeletePostAsync(Posts post);
+        Task<string> AddPostAsync(Post post);
+        Task<string> UpdatePostAsync(Post post);
+        Task<string> DeletePostAsync(Post post);
+
+        Task<Post>LikePostAsync(Guid Id);
+
+        Task<Post> UnLikePostAsync(Guid Id);
+        Task <IEnumerable<Post>> GetPostsByTagAsync(string tag);
     }
 }
  

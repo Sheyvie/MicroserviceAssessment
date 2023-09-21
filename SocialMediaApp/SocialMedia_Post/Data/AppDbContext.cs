@@ -10,6 +10,6 @@ namespace SocialMedia_Post.Data
 
         }
 
-        public DbSet<Posts> Posts { get; set; }
+        public DbSet<Post> Posts { get; set; }
     }
 }
